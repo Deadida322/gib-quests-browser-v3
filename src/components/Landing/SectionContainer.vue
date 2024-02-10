@@ -6,15 +6,18 @@
         }">
         <v-col
             cols="0"
+            sm="1"
             md="2"></v-col>
         <v-col
             cols="12"
             md="8"
+            sm="10"
             class="pa-6 pa-md-0">
             <slot></slot>
         </v-col>
         <v-col
             cols="0"
+            sm="1"
             md="2"></v-col>
     </v-row>
 </template>

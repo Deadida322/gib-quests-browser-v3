@@ -64,11 +64,12 @@
             </h2>
             <div
                 class="d-flex justify-space-between flex-wrap stages-container">
-                <stage-landing
+                <div
                     v-for="stage in stages"
                     :key="stage.title"
-                    width="calc(50% - 13px) !important"
-                    :stage="stage"></stage-landing>
+                    class="w-50-100">
+                    <stage-landing :stage="stage"></stage-landing>
+                </div>
             </div>
 
             <div class="d-flex justify-center mt-6 mb-4">
@@ -125,11 +126,12 @@
             </h2>
             <div
                 class="d-flex justify-space-between flex-wrap updates-container">
-                <update-landing
+                <div
                     v-for="update in updates"
                     :key="update.title"
-                    width="calc(50% - 13px) !important"
-                    :update="update"></update-landing>
+                    class="w-50-100">
+                    <update-landing :update="update"></update-landing>
+                </div>
             </div>
             <div class="d-flex justify-center mt-6 mb-4">
                 <v-btn
@@ -151,7 +153,11 @@
 
 <style lang="scss" scoped>
     .w-50-100 {
-        width: calc(50% - 10px) !important;
+        width: calc(50% - 13px) !important;
+
+        @media screen and (width <= 1200px) {
+            width: 100% !important;
+        }
     }
 
     .updates-container,

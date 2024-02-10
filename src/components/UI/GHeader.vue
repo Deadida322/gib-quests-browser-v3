@@ -26,7 +26,7 @@
 <template>
     <v-app-bar color="primary">
         <v-app-bar-nav-icon
-            @click="drawerValue = !drawerValue"></v-app-bar-nav-icon>
+            @mouseover="drawerValue = !drawerValue"></v-app-bar-nav-icon>
         <v-app-bar-title>{{ pageName }}</v-app-bar-title>
         <v-spacer></v-spacer>
         <g-lk-menu></g-lk-menu>
