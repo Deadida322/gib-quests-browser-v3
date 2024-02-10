@@ -13,7 +13,7 @@
 
 <template>
     <g-card class="pb-0">
-        <v-card-text class="pa-8 d-flex align-center">
+        <v-card-text class="pa-sm-4 pa-3 pa-md-8 d-flex align-center">
             <v-progress-circular
                 :rotate="360"
                 :size="100"

@@ -9,7 +9,7 @@
 </script>
 
 <template>
-    <g-card class="pa-4 position-relative card">
+    <g-card class="pa-sm-4 pa-2 pa-md-4 position-relative card">
         <v-chip
             class="chip"
             :class="{

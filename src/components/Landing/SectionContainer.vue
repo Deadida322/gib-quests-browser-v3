@@ -6,6 +6,7 @@
         }">
         <v-col
             cols="0"
+            class="d-none d-sm-block"
             sm="1"
             md="2"></v-col>
         <v-col
@@ -17,6 +18,7 @@
         </v-col>
         <v-col
             cols="0"
+            class="d-none d-sm-block"
             sm="1"
             md="2"></v-col>
     </v-row>

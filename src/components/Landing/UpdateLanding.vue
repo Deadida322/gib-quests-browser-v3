@@ -9,7 +9,7 @@
 </script>
 
 <template>
-    <g-card class="pa-4 card">
+    <g-card class="pa-1 pa-sm-4 card">
         <v-card-title class="text-deep-purple">{{ update.title }}</v-card-title>
         <v-card-text class="g-card-body d-flex mt-4 align-center">
             <v-btn

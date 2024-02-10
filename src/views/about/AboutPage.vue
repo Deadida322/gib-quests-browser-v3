@@ -12,8 +12,8 @@
     <div class="about">
         <v-parallax>
             <v-img
-                class="g__image_rb"
-                height="600"
+                class="g__image_rb about-image"
+                height="500"
                 height-md="750"
                 cover
                 gradient="to bottom,rgba(33,29,82,0.7), rgba(73,79,113,0.8)"
@@ -49,7 +49,7 @@
         </v-parallax>
         <section-container>
             <div
-                class="text-h5 mt-10 pt-4 pb-4 mb-10 text-center text-blue-grey-darken-1">
+                class="text-sm-h6 text-subtitle-1 mt-4 mt-sm-10 pt-0 pt-sm-4 pb-0 pb-sm-4 mb-4 mb-sm-10 text-center text-blue-grey-darken-1">
                 Сервис
                 <span class="text-deep-purple">QuestsGib</span> создан для
                 вашего настроения и настроения ваших близких. Приложение
@@ -59,7 +59,8 @@
             </div>
         </section-container>
         <section-container tonal>
-            <h2 class="text-h3 mt-8 mb-8 text-grey-darken-3 text-center">
+            <h2
+                class="text-h5 text-sm-h3 mt-0 mt-sm-8 mb-8 text-grey-darken-3 text-center">
                 Широкий список этапов
             </h2>
             <div
@@ -88,7 +89,8 @@
             </div>
         </section-container>
         <section-container class="pb-4">
-            <h2 class="text-h3 mt-8 mb-8 text-grey-darken-3 text-center">
+            <h2
+                class="text-h5 text-sm-h3 mt-0 mt-sm-8 mb-8 text-grey-darken-3 text-center">
                 Возможность отследить квест
             </h2>
             <div class="watch_container">
@@ -99,7 +101,7 @@
                     :watch="watch"></watch-landing>
             </div>
             <div
-                class="text-h5 mt-5 pt-4 pb-4 mb-5 text-center text-blue-grey-darken-1">
+                class="text-sm-h6 text-subtitle-1 mt-5 pt-4 pb-4 mb-5 text-center text-blue-grey-darken-1">
                 А также удобный личный кабинет для просмотра своих созданных и
                 пройденных квестов
             </div>
@@ -121,7 +123,8 @@
         <section-container
             class="pb-4"
             tonal>
-            <h2 class="text-h3 mt-8 mb-8 text-center text-grey-darken-3">
+            <h2
+                class="text-h5 text-sm-h3 mt-0 mt-sm-8 mb-8 text-grey-darken-3 text-center">
                 Следующие обновления
             </h2>
             <div
@@ -133,7 +136,7 @@
                     <update-landing :update="update"></update-landing>
                 </div>
             </div>
-            <div class="d-flex justify-center mt-6 mb-4">
+            <div class="d-flex justify-center mt-6 mb-0 mb-sm-6">
                 <v-btn
                     href="https://vk.com"
                     variant="tonal"
@@ -182,6 +185,14 @@
 
         .v-img__img {
             z-index: 1;
+        }
+    }
+
+    .about-image {
+        height: 750px !important;
+
+        @media screen and (width <= 600px) {
+            height: 500px !important;
         }
     }
 </style>
