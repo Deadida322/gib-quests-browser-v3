@@ -1,0 +1,43 @@
+@import "./variables";
+
+.g-border-gradient {
+    position: relative;
+    z-index: 2;
+
+    &::after{
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        background: $gradient-main !important;
+        z-index: -1;
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+}
+
+.g__image_rb {
+    clip-path: ellipse(100% 52% at 49% 45%);
+    background-color: rgb(243 229 245);
+
+    @media screen and (width <= 600px) {
+        clip-path: none;
+    }
+}
+
+.g__text_gradient {
+    background: $gradient-main;
+    color: $primary-tonal-hover;
+    background-clip: text;
+}
+
+
+.mt--1 {
+    margin-top: -4px;
+}
+
+.mt--8 {
+    margin-top: -32px;
+}

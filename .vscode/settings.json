@@ -2,13 +2,18 @@
     "nuxt.isNuxtApp": false,
     "eslint.format.enable": true,
     "editor.codeActionsOnSave": {
-        "source.fixAll": true,
-        "source.fixAll.stylelint": true
+        "source.fixAll": "explicit",
+        "source.fixAll.stylelint": "explicit"
     },
     "css.validate": false,
     "less.validate": false,
     "scss.validate": false,
     "vue.validate": false,
     "stylelint.config": null,
-    "stylelint.validate": ["css", "scss", "vue"],
+    "stylelint.validate": [
+        "css",
+        "scss",
+        "vue"
+    ],
+    "vue.codeActions.enabled": false,
 }

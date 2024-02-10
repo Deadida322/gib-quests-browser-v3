@@ -1,55 +1,71 @@
-<script setup>
-    defineProps({
-        msg: {
-            type: String,
-            default: ""
-        }
-    });
-
-    const a = () => 2;
-    a();
-</script>
-
 <template>
-    <h1>{{ msg }}</h1>
-
-    <div class="card">
-        <button
-            type="button"
-            @click="count++">
-            count is {{ count }}
-        </button>
-        <p>
-            Edit
-            <code>components/HelloWorld.vue</code>
-            to test HMR
-        </p>
-    </div>
-
-    <p>
-        Check out
-        <a
-            href="https://vuejs.org/guide/quick-start.html#local"
-            target="_blank">
-            create-vue
-        </a>
-        , the official Vue + Vite starter
-    </p>
-    <p>
-        Install
-        <a
-            href="https://github.com/vuejs/language-tools"
-            target="_blank">
-            Volar
-        </a>
-        in your IDE for a better DX
-    </p>
-    <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+    <v-container>
+        <v-row class="text-center">
+            <v-col cols="12">
+                <v-img
+                    :src="logo"
+                    class="my-3"
+                    cover
+                    height="200" />
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
-<style scoped>
-    .read-the-docs {
-        color: rgb(160 111 111);
-        z-index: 0;
-    }
-</style>
+<script>
+    import logo from "../assets/logo.svg";
+
+    export default {
+        name: "HelloWorld",
+
+        data: () => ({
+            ecosystem: [
+                {
+                    text: "vuetify-loader",
+                    href: "https://github.com/vuetifyjs/vuetify-loader/tree/next"
+                },
+                {
+                    text: "github",
+                    href: "https://github.com/vuetifyjs/vuetify/tree/next"
+                },
+                {
+                    text: "awesome-vuetify",
+                    href: "https://github.com/vuetifyjs/awesome-vuetify"
+                }
+            ],
+            importantLinks: [
+                {
+                    text: "Chat",
+                    href: "https://community.vuetifyjs.com"
+                },
+                {
+                    text: "Made with Vuetify",
+                    href: "https://madewithvuejs.com/vuetify"
+                },
+                {
+                    text: "Twitter",
+                    href: "https://twitter.com/vuetifyjs"
+                },
+                {
+                    text: "Articles",
+                    href: "https://medium.com/vuetify"
+                }
+            ],
+            logo,
+            whatsNext: [
+                {
+                    text: "Explore components",
+                    href: "https://vuetifyjs.com"
+                },
+                {
+                    text: "Roadmap",
+                    href: "https://vuetifyjs.com/introduction/roadmap/"
+                },
+                {
+                    text: "Frequently Asked Questions",
+                    href: "https://vuetifyjs.com/getting-started/frequently-asked-questions"
+                }
+            ]
+        })
+    };
+</script>
