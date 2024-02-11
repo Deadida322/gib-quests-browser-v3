@@ -8,6 +8,7 @@ import { loadFonts } from "./plugins/webfontloader";
 import { GComponents } from "@/components/UI";
 import gradientIcon from "@/directives/gradientIcon";
 import gradientOutline from "@/directives/gradientOutline";
+import { nextTick } from "vue";
 
 loadFonts();
 const Vue = createApp(App);
@@ -20,3 +21,10 @@ for (let { name, component } of GComponents) {
 }
 
 Vue.use(router).use(vuetify).use(pinia).use(CKEditor).mount("#app");
+
+router.beforeEach((to) => {
+    nextTick(() => {
+        console.log(to);
+        document.title = to.meta.title || "Gib-Quests";
+    });
+});

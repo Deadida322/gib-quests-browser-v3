@@ -13,47 +13,56 @@ const routes = [
     {
         path: "/",
         name: "Home",
-        component: Home
+        component: Home,
+        meta: { title: "Найти квест" }
     },
     {
         path: "/lk/my-quests",
         name: "MyQuests",
-        component: MyQuests
+        component: MyQuests,
+        meta: { title: "Мои квесты" }
     },
     {
         path: "/create/:id",
         name: "Create",
-        component: Create
+        component: Create,
+        meta: { title: "Создать новый" }
     },
     {
         path: "/auth/login",
         name: "login",
-        component: LoginPage
+        component: LoginPage,
+        meta: { title: "Войти" }
     },
     {
         path: "/auth/reg",
         name: "Reg",
-        component: RegPage
+        component: RegPage,
+        meta: { title: "Создать аккаунт" }
     },
     {
         path: "/lk",
         name: "LK",
-        component: LkPage
+        component: LkPage,
+        meta: { title: "Личный кабинет" }
     },
     {
         path: "/about",
         name: "About",
-        component: AboutPage
+        component: AboutPage,
+        meta: { title: "О нас" }
     },
     {
         path: "/preview/:id",
         name: "Preview",
-        component: PreviewPage
+        component: PreviewPage,
+        meta: { title: "Предпросмотр" }
     },
     {
         path: "/process/:id",
         name: "Process",
-        component: ProcessPage
+        component: ProcessPage,
+        meta: { title: "Пройти" }
     }
 ];
 

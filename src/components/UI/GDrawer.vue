@@ -63,8 +63,7 @@
                     <template #activator="slot">
                         <v-list-item
                             v-bind="slot.props"
-                            :title="item.name"
-                            :value="item.icon">
+                            :title="item.name">
                             <template #prepend>
                                 <v-icon :icon="item.icon"></v-icon>
                             </template>
