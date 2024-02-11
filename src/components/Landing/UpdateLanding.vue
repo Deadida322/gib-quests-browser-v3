@@ -15,13 +15,12 @@
             <v-btn
                 v-gradient-icon
                 rounded
-                height="80"
-                width="80"
+                class="update-landing__icon"
                 variant="tonal"
                 color="primary">
                 <v-icon size="40">mdi-{{ update.icon }}</v-icon>
             </v-btn>
-            <div class="ml-6 text-blue-grey-lighten-1">
+            <div class="ml-4 ml-sm-6 text-blue-grey-lighten-1">
                 {{ update.description }}
             </div>
         </v-card-text>
@@ -31,5 +30,28 @@
 <style lang="scss" scoped>
     ::v-deep(.v-card) {
         overflow: visible;
+    }
+
+    .update-landing__icon {
+        max-width: 50px !important;
+        height: 50px;
+        min-width: 50px !important;
+        padding: 0 !important;
+        pointer-events: none;
+
+        ::v-deep(i) {
+            font-size: 24px !important;
+        }
+
+        @media screen and (width >= 600px) {
+            max-width: 80px !important;
+            height: 80px;
+            min-width: 80px !important;
+            padding: 0 !important;
+
+            ::v-deep(i) {
+                font-size: 40px !important;
+            }
+        }
     }
 </style>

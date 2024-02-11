@@ -169,6 +169,8 @@
     }
 
     .about {
+        overflow: hidden;
+
         &__image-container {
             height: 90%;
         }

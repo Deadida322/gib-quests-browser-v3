@@ -9,7 +9,7 @@
 </script>
 
 <template>
-    <g-card class="pa-sm-4 pa-2 pa-md-4 position-relative card">
+    <g-card class="pa-sm-4 pa-0 pa-md-4 position-relative card">
         <v-chip
             class="chip"
             :class="{
@@ -23,13 +23,12 @@
             <v-btn
                 v-gradient-icon
                 rounded
-                height="80"
-                width="80"
+                class="stage-landing__icon"
                 variant="tonal"
                 color="primary">
                 <v-icon size="40">mdi-{{ stage.icon }}</v-icon>
             </v-btn>
-            <div class="ml-6 text-blue-grey-lighten-1">
+            <div class="ml-4 ml-sm-6 text-blue-grey-lighten-1">
                 {{ stage.description }}
             </div>
         </v-card-text>
@@ -53,8 +52,35 @@
         }
     }
 
+    .stage-landing__icon {
+        max-width: 50px !important;
+        height: 50px;
+        min-width: 50px !important;
+        padding: 0 !important;
+        pointer-events: none;
+
+        ::v-deep(i) {
+            font-size: 24px !important;
+        }
+
+        @media screen and (width >= 600px) {
+            max-width: 80px !important;
+            height: 80px;
+            min-width: 80px !important;
+            padding: 0 !important;
+
+            ::v-deep(i) {
+                font-size: 40px !important;
+            }
+        }
+    }
+
     ::v-deep(.v-card) {
         overflow: visible;
+    }
+
+    ::v-deep(.v-btn--size-default) {
+        padding: 0 !important;
     }
 
     ::v-deep(.v-chip) {
