@@ -33,7 +33,8 @@
         temporary
         :elevation="0"
         :border="0"
-        class="pa-4">
+        class="pa-4"
+        @mouseleave="show = false">
         <div class="d-flex flex-column justify-space-around align-center">
             <div class="text-caption mb-4">powered by</div>
             <logo width="40%" />

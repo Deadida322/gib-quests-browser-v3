@@ -18,12 +18,13 @@
                 :rotate="360"
                 :size="100"
                 :width="15"
+                class="d-none d-md-inline-flex"
                 :model-value="progress">
                 {{ watch.now }} / {{ watch.all }}
             </v-progress-circular>
-            <div class="ml-2">
+            <div class="ml-0 ml-md-6">
                 <v-card-title>{{ watch.name }}</v-card-title>
-                <div class="mt-2 ml-4">
+                <div class="mt-2">
                     Текущий этап:
                     <v-chip
                         color="primary"
@@ -32,7 +33,7 @@
                         >{{ watch.currentStage }}</v-chip
                     >
                 </div>
-                <div class="mt-2 ml-4">
+                <div class="mt-2">
                     Следующий этап:
                     <v-chip
                         color="primary"

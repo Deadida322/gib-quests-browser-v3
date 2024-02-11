@@ -67,6 +67,7 @@
             left: 0;
             width: v-bind("computedWidth");
             overflow: hidden;
+            transition: width 0.2s ease-in-out;
             height: 100%;
             z-index: 2;
         }

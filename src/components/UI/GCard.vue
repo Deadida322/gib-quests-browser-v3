@@ -23,7 +23,7 @@
         @mouseleave="hovered = false">
         <v-card
             v-bind="attrs"
-            elevation="1">
+            elevation="0">
             <slot></slot>
         </v-card>
     </g-gradient>

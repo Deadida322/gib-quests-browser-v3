@@ -4,25 +4,30 @@ const mockQuest = {
     description: `Описание`,
     stages: [
         {
+            order: 1,
             title: "Текстовый этап",
             type: "text",
             text: "asdadasd"
         },
         {
+            order: 2,
             title: "Видео этап",
             type: "video",
             url: "https://www.youtube.com/watch?v=es0uF-ent40"
         },
         {
+            order: 3,
             title: "Тестовый этап",
             type: "test"
         },
         {
+            order: 4,
             title: "Карточный этап",
             type: "map",
             url: "test"
         },
         {
+            order: 5,
             title: "QR этап",
             type: "qrCode",
             code: "test"

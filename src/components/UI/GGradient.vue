@@ -88,7 +88,7 @@
                     else defaultContainerWidth.value = "100%";
                     if (!containerHeight.value)
                         defaultContainerHeight.value = "fit-content";
-                    else defaultContainerHeight.value = "100%";
+                    // else defaultContainerHeight.value = "100%";
                 },
                 true
             );

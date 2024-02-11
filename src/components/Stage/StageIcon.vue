@@ -14,6 +14,8 @@
 <template>
     <g-gradient
         :border-width="2"
+        :container-width="64"
+        :container-height="64"
         border-radius="50%">
         <v-btn
             icon
