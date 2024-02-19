@@ -4,7 +4,7 @@
     import mockQuest from "@/assets/consts/mockQuest";
     import ProcessStage from "@/components/Process/ProcessStage.vue";
 
-    const currentStage = ref(0);
+    const currentStage = ref(3);
 
     watch(currentStage, (val) => {
         if (val < 0) {
@@ -15,7 +15,7 @@
     const stageCount = computed(() => mockQuest.stages.length);
 
     const progress = computed(
-        () => (currentStage.value / stageCount.value) * 100
+        () => (currentStage.value / (stageCount.value - 1)) * 100
     );
 
     const onNextStage = () => {

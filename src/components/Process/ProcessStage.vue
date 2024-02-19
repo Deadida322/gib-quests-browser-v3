@@ -2,6 +2,9 @@
     import StageIcon from "@/components/Stage/StageIcon.vue";
     import ProcessText from "@/components/Process/ProcessText.vue";
     import ProcessVideo from "@/components/Process/ProcessVideo.vue";
+    import ProcessTest from "@/components/Process/ProcessTest/ProcessTest.vue";
+    import ProcessMap from "@/components/Process/ProcessMap.vue";
+    import ProcessQrCode from "@/components/Process/ProcessQrCode.vue";
     defineProps({
         stage: {
             type: Object,
@@ -38,6 +41,18 @@
                 v-else-if="stage.type === 'video'"
                 :stage="stage"
                 @next-stage="emit('next-stage')"></process-video>
+            <process-test
+                v-else-if="stage.type === 'test'"
+                :stage="stage"
+                @next-stage="emit('next-stage')"></process-test>
+            <process-map
+                v-else-if="stage.type === 'map'"
+                :stage="stage"
+                @next-stage="emit('next-stage')"></process-map>
+            <process-qr-code
+                v-else-if="stage.type === 'qrCode'"
+                :stage="stage"
+                @next-stage="emit('next-stage')"></process-qr-code>
         </v-card-text>
     </g-card>
 </template>

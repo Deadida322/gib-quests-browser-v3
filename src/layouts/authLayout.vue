@@ -3,7 +3,8 @@
 <template>
     <v-app>
         <v-main>
-            <div class="d-flex justify-space-around align-center auth-page">
+            <div
+                class="d-flex justify-space-around align-center auth-page pa-2">
                 <slot></slot>
             </div>
         </v-main>

@@ -11,13 +11,13 @@
             <g-gradient
                 border-width="0"
                 border-radius="4px"
-                :container-width="600"
+                :container-width="500"
                 :glow="4">
-                <v-card width="600">
-                    <v-card-title class="text-deep-purple-darken-4 mb-2"
+                <v-card width="100%">
+                    <v-card-title class="text-deep-purple-darken-4 pb-0"
                         >Регистрация</v-card-title
                     >
-                    <v-card-text>
+                    <v-card-text class="pa-3 pa-sm-4">
                         <g-image-loader
                             v-model="form.avatar"
                             class="mt-1 mb-4"></g-image-loader>

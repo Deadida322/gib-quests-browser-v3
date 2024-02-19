@@ -19,7 +19,7 @@
             >{{ stage.status }}</v-chip
         >
         <v-card-title class="text-deep-purple">{{ stage.title }}</v-card-title>
-        <v-card-text class="g-card-body d-flex mt-4 align-center">
+        <v-card-text class="g-card-body d-flex mt-sm-4 mt-0 align-center">
             <v-btn
                 v-gradient-icon
                 rounded

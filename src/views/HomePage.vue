@@ -69,6 +69,9 @@
 
         .quest-preview {
             width: calc(50% - 5px);
+            @media screen and (width <= 600px) {
+                width: 100%;
+            }
         }
     }
 </style>

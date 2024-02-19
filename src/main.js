@@ -1,14 +1,15 @@
-import { createApp } from "vue";
+import { createApp, nextTick } from "vue";
 import App from "./App.vue";
 import router from "./router";
 /* stylelint-disable */
-import vuetify from "./plugins/vuetify";
 import CKEditor from "@ckeditor/ckeditor5-vue";
 import { loadFonts } from "./plugins/webfontloader";
 import { GComponents } from "@/components/UI";
 import gradientIcon from "@/directives/gradientIcon";
 import gradientOutline from "@/directives/gradientOutline";
-import { nextTick } from "vue";
+
+import "@mdi/font/css/materialdesignicons.css";
+import vuetify from "@/plugins/vuetify";
 
 loadFonts();
 const Vue = createApp(App);

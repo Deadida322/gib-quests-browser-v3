@@ -11,9 +11,12 @@
 </script>
 
 <template>
-    <v-card class="d-flex pa-4">
-        <stage-icon :stage-type="stage.type"> </stage-icon>
-        <div class="w-100 mx-6">
+    <v-card class="d-flex pa-3 pa-sm-4 align-center">
+        <stage-icon
+            class="stage-icon"
+            :stage-type="stage.type">
+        </stage-icon>
+        <div class="w-100 mx-sm-6 mx-4 mr-0">
             <div>
                 {{ stage.title }}
             </div>
@@ -23,3 +26,20 @@
         </div>
     </v-card>
 </template>
+
+<style lang="scss" scoped>
+    .stage-icon {
+        @media screen and (width <= 600px) {
+            width: 48px !important;
+            height: 48px !important;
+
+            ::v-deep(button) {
+                height: 48px !important;
+            }
+
+            ::v-deep(i) {
+                width: 12px !important;
+            }
+        }
+    }
+</style>

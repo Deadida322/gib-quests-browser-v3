@@ -12,11 +12,11 @@
             border-radius="4px"
             :container-width="500"
             :glow="4">
-            <v-card width="500">
-                <v-card-title class="text-deep-purple-darken-4 mb-2"
+            <v-card width="100%">
+                <v-card-title class="text-deep-purple-darken-4 pb-0"
                     >Вход</v-card-title
                 >
-                <v-card-text>
+                <v-card-text class="pa-3 pa-sm-4">
                     <v-text-field
                         v-model="form.login"
                         color="primary"

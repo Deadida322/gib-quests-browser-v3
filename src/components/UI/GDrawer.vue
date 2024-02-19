@@ -1,3 +1,4 @@
+<!-- eslint-disable vuetify/no-deprecated-props -->
 <!-- eslint-disable vue/no-template-shadow -->
 <script setup>
     import menuItems from "@/assets/js/menu.js";
@@ -29,12 +30,12 @@
     <v-navigation-drawer
         v-model="show"
         width="400px"
-        absolute
+        sticky
+        :mobile-breakpoint="0"
         temporary
         :elevation="0"
         :border="0"
-        class="pa-4"
-        @mouseleave="show = false">
+        class="pa-4">
         <div class="d-flex flex-column justify-space-around align-center">
             <div class="text-caption mb-4">powered by</div>
             <logo width="40%" />

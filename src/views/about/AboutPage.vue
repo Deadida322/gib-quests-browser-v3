@@ -38,7 +38,7 @@
                         </v-btn>
                         <v-btn
                             class="text-white"
-                            to="/login"
+                            to="/auth/reg"
                             width="148"
                             color="primary">
                             Попробовать
@@ -108,7 +108,7 @@
             <div class="d-flex justify-center mt-2 mb-2">
                 <v-btn
                     variant="tonal"
-                    to="/register"
+                    to="/auth/reg"
                     color="primary">
                     <v-icon
                         class="mr-2"

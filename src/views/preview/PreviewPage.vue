@@ -13,7 +13,7 @@
                 <v-img
                     height="600"
                     cover
-                    class="g__image_rb"
+                    class="g__image_rb quest-preview__img-container"
                     gradient="to bottom,rgba(33,29,82,0.2), rgba(73,79,113,0.8)"
                     :src="quest.image">
                     <div class="quest-preview__img">
@@ -52,7 +52,7 @@
                 </div>
             </div>
 
-            <div class="quest-preview__stages ma-2 pa-1">
+            <div class="quest-preview__stages ma-1 pa-1">
                 <stage-preview
                     v-for="(stage, index) in quest.stages"
                     :key="index"
@@ -82,6 +82,12 @@
             align-items: center;
         }
 
+        &__img-container {
+            @media screen and (width <= 600px) {
+                height: 250px !important;
+            }
+        }
+
         &__title {
             font-size: 60px !important;
         }
@@ -93,6 +99,10 @@
         &__stages {
             margin-top: 30px;
             max-height: 400px;
+            @media screen and (width <= 600px) {
+                max-height: none;
+            }
+
             overflow-y: scroll;
             margin-bottom: 10px;
             gap: 10px;
@@ -120,6 +130,9 @@
 
     .stage-preview {
         width: calc(50% - 5px);
+        @media screen and (width <= 600px) {
+            width: 100%;
+        }
     }
 
     :deep {

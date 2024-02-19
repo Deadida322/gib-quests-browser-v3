@@ -18,13 +18,54 @@ const mockQuest = {
         {
             order: 3,
             title: "Тестовый этап",
-            type: "test"
+            type: "test",
+            questions: [
+                {
+                    title: "1213",
+                    type: "multiple",
+                    answers: ["Ответ 1", "Ответ 2"],
+                    rightAnswers: [],
+                    order: 0
+                },
+                {
+                    title: "2 вопрос",
+                    type: "insert",
+                    answers: ["Ответ 1"],
+                    rightAnswers: [],
+                    order: 1
+                },
+                {
+                    title: "3 вопрос",
+                    type: "single",
+                    answers: ["Ответ 1", "Ответ 2", "Ответ 3"],
+                    rightAnswers: [],
+                    order: 1
+                },
+                {
+                    title: "4 вопрос",
+                    type: "insert",
+                    answers: ["Ответ 1"],
+                    rightAnswers: [],
+                    order: 1
+                },
+                {
+                    title: "5 вопрос",
+                    type: "order",
+                    answers: ["Ответ 1", "Ответ 2", "Ответ 3"],
+                    rightAnswers: [],
+                    order: 1
+                }
+            ]
         },
         {
             order: 4,
             title: "Карточный этап",
             type: "map",
-            url: "test"
+            url: "test",
+            point: {
+                latitude: 12,
+                longitude: 10
+            }
         },
         {
             order: 5,

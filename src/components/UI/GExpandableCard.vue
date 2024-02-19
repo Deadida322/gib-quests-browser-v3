@@ -56,4 +56,10 @@
     ::v-deep(.v-expansion-panel-title__overlay) {
         opacity: 0 !important;
     }
+
+    @media screen and (width <= 600px) {
+        ::v-deep(.v-expansion-panel-text__wrapper) {
+            padding: 8px;
+        }
+    }
 </style>

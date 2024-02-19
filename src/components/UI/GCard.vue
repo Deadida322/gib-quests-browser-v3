@@ -7,6 +7,16 @@
             default: "100%",
             required: false,
             type: String
+        },
+        borderWidth: {
+            default: 0.5,
+            required: false,
+            type: Number
+        },
+        animateGlow: {
+            default: true,
+            required: false,
+            type: Boolean
         }
     });
 </script>
@@ -17,8 +27,8 @@
         :style="{
             width: width
         }"
-        :animate-glow="hovered"
-        :border-width="0.5"
+        :animate-glow="hovered && animateGlow"
+        :border-width="borderWidth"
         @mouseover="hovered = true"
         @mouseleave="hovered = false">
         <v-card

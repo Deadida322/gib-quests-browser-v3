@@ -108,5 +108,8 @@
 <style lang="scss" scoped>
     .quest {
         width: 49%;
+        @media screen and (width <= 600px) {
+            width: 100%;
+        }
     }
 </style>

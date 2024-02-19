@@ -4,7 +4,7 @@
     import { required, minLength } from "@vuelidate/validators";
     import draggable from "vuedraggable";
     import testMenu from "@/assets/consts/testMenu";
-    import testQuestion from "./TestQuestion.vue";
+    import TestQuestion from "@/components/create/Test/TestQuestion.vue";
     const emit = defineEmits(["update:model-value"]);
     const props = defineProps({
         stage: {
