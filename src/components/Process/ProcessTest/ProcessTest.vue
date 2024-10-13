@@ -62,9 +62,9 @@
                         class="header__divider"></g-progressbar>
                 </template>
             </div>
-            <v-card-title class="text-deep-purple-darken-4 pl-0">
+            <div class="text-deep-purple-darken-4 pl-0 mt-2">
                 {{ question.title }}
-            </v-card-title>
+            </div>
             <v-card-text class="pl-0">
                 <process-question
                     v-model:question="question"></process-question>
@@ -74,9 +74,7 @@
                 <v-btn
                     variant="tonal"
                     color="primary"
-                    :disabled="
-                        !(question.rightAnswers && question.rightAnswers[0])
-                    "
+                    :disabled="!question.right"
                     @click="onNextStage"
                     >{{ isLastQuestion ? "Завершить" : "Следующий" }}</v-btn
                 >

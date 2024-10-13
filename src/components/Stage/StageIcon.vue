@@ -27,7 +27,7 @@
                 v-gradient-icon="{ degrees: -135 }"
                 class="icon"
                 size="large">
-                {{ stageTypes[stageType].icon }}
+                {{ stageTypes[stageType]?.icon || "mdi-heart" }}
             </v-icon>
         </v-btn>
     </g-gradient>

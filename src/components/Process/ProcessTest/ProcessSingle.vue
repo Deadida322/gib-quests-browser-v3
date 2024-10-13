@@ -19,7 +19,11 @@
     const editableAnswers = ref();
 
     watch(editableAnswers, (val) => {
-        editableQuestion.value.rightAnswers = [val];
+        editableQuestion.value.answ = [val];
+        if (val === editableQuestion.value.rightAnswers[0]) {
+            return (editableQuestion.value.right = true);
+        }
+        editableQuestion.value.right = false;
     });
 </script>
 

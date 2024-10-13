@@ -20,7 +20,16 @@
     const editableAnswers = ref([]);
 
     watch(editableAnswers, (val) => {
-        editableQuestion.value.rightAnswers = val;
+        editableQuestion.value.answ = val;
+        if (
+            val.sort((a, b) => a.localeCompare(b)).join("") ===
+            editableQuestion.value.rightAnswers
+                .sort((a, b) => a.localeCompare(b))
+                .join("")
+        ) {
+            return (editableQuestion.value.right = true);
+        }
+        editableQuestion.value.right = false;
     });
 </script>
 

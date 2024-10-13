@@ -12,13 +12,15 @@
 
     const { stage } = toRefs(props);
     const editableStage = ref(stage.value);
+    const disabled = ref(true);
     const emit = defineEmits(["next-stage"]);
 
     qr.callback = (err, value) => {
         if (err) {
             console.error(err);
         }
-        emit("next-stage", value.result);
+        if (value.result === stage.value.code) disabled.value = false;
+        else disabled.value = true;
     };
 
     const readQrCode = (value) => {
@@ -36,6 +38,8 @@
             <v-btn
                 color="primary"
                 variant="tonal"
+                :disabled="disabled"
+                @click="emit('next-stage')"
                 >Далее</v-btn
             >
         </div>

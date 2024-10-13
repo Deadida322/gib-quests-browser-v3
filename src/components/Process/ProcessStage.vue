@@ -5,6 +5,7 @@
     import ProcessTest from "@/components/Process/ProcessTest/ProcessTest.vue";
     import ProcessMap from "@/components/Process/ProcessMap.vue";
     import ProcessQrCode from "@/components/Process/ProcessQrCode.vue";
+    import FlappyTyom from "@/components/Process/FlappyTyom.vue";
     defineProps({
         stage: {
             type: Object,
@@ -13,7 +14,7 @@
         }
     });
 
-    const emit = defineEmits(["next-stage"]);
+    const emit = defineEmits(["next-stage", "valid-change"]);
 </script>
 
 <template>
@@ -35,24 +36,40 @@
         <v-card-text class="mt-2">
             <process-text
                 v-if="stage.type === 'text'"
+                :key="stage.order"
                 :stage="stage"
+                @valid-change="emit('valid-change')"
                 @next-stage="emit('next-stage')"></process-text>
             <process-video
                 v-else-if="stage.type === 'video'"
+                :key="stage.order"
                 :stage="stage"
+                @valid-change="emit('valid-change')"
                 @next-stage="emit('next-stage')"></process-video>
             <process-test
                 v-else-if="stage.type === 'test'"
+                :key="stage.order"
                 :stage="stage"
+                @valid-change="emit('valid-change')"
                 @next-stage="emit('next-stage')"></process-test>
             <process-map
                 v-else-if="stage.type === 'map'"
+                :key="stage.order"
                 :stage="stage"
+                @valid-change="emit('valid-change')"
                 @next-stage="emit('next-stage')"></process-map>
             <process-qr-code
                 v-else-if="stage.type === 'qrCode'"
+                :key="stage.order"
                 :stage="stage"
+                @valid-change="emit('valid-change')"
                 @next-stage="emit('next-stage')"></process-qr-code>
+            <flappy-tyom
+                v-else-if="stage.type === 'flappy'"
+                :key="stage.order"
+                :stage="stage"
+                @valid-change="emit('valid-change')"
+                @next-stage="emit('next-stage')"></flappy-tyom>
         </v-card-text>
     </g-card>
 </template>

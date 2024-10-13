@@ -19,8 +19,14 @@
     const editableAnswers = ref("");
 
     watch(editableAnswers, (val) => {
-        editableQuestion.value.rightAnswers[0] = val;
-        console.log(editableQuestion.value.rightAnswers);
+        editableQuestion.value.answ[0] = val;
+        if (
+            editableQuestion.value.rightAnswers[0].toLowerCase() ===
+            val.toLowerCase()
+        ) {
+            return (editableQuestion.value.right = true);
+        }
+        editableQuestion.value.right = false;
     });
 </script>
 

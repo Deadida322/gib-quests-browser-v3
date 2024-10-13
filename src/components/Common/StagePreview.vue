@@ -21,7 +21,7 @@
                 {{ stage.title }}
             </div>
             <div class="mt-2 text-grey-darken-2">
-                {{ stageTypes[stage.type].description }}
+                {{ stageTypes[stage.type]?.description || "Загадочный этап" }}
             </div>
         </div>
     </v-card>

@@ -1,9 +1,17 @@
 <!-- eslint-disable vue/no-v-html -->
 <script setup>
     import defaultLayout from "@/layouts/defaultLayout.vue";
+    import { useRouter } from "vue-router";
     import mockQuest from "../../assets/consts/mockQuest";
     import StagePreview from "@/components/Common/StagePreview.vue";
     let quest = mockQuest;
+    const router = useRouter();
+
+    if (localStorage.getItem("isStarted")) {
+        router.push("/process/karisha");
+    }
+
+    const startStage = () => localStorage.setItem("isStarted", true);
 </script>
 
 <template>
@@ -36,8 +44,8 @@
                         class="ml-2"
                         color="primary"
                         >{{ quest.stages.length }}</v-chip
-                    ></v-card-title
-                >
+                    >
+                </v-card-title>
                 <div class="d-flex">
                     <v-btn
                         class="mr-2"
@@ -65,6 +73,7 @@
                     color="primary"
                     variant="tonal"
                     :to="`/process/${quest.id}`"
+                    @click="startStage"
                     >Начать квест</v-btn
                 >
             </v-card-actions>
@@ -90,6 +99,14 @@
 
         &__title {
             font-size: 60px !important;
+
+            @media screen and (width <= 600px) {
+                font-size: 36px !important;
+                max-width: 100%;
+                text-align: center;
+                white-space: wrap !important;
+                line-height: 40px;
+            }
         }
 
         &__button {

@@ -4,7 +4,9 @@
     import mockQuest from "@/assets/consts/mockQuest";
     import ProcessStage from "@/components/Process/ProcessStage.vue";
 
-    const currentStage = ref(3);
+    const currentStage = ref(
+        JSON?.parse(localStorage?.getItem("current")) || 0
+    );
 
     watch(currentStage, (val) => {
         if (val < 0) {
@@ -20,6 +22,7 @@
 
     const onNextStage = () => {
         currentStage.value += 1;
+        localStorage.setItem("current", currentStage.value);
     };
 </script>
 
@@ -49,8 +52,10 @@
             </div>
             <div class="d-flex justify-center mt-6">
                 <process-stage
+                    v-if="currentStage < mockQuest.stages.length"
                     :stage="mockQuest.stages[currentStage]"
                     @next-stage="onNextStage"></process-stage>
+                <v-card-title v-else>Ты победила!</v-card-title>
             </div>
             <g-progressbar
                 class="progress-bar"

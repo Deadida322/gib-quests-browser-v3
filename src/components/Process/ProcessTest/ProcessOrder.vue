@@ -12,7 +12,9 @@
     const { question } = toRefs(props);
 
     const editableQuestion = computed({
-        set: (val) => emit("update:question", val),
+        set: (val) => {
+            emit("update:question", val);
+        },
         get: () => question.value
     });
 
@@ -26,9 +28,16 @@
                 item: item
             })),
         set: (val) => {
-            answersToDrag.value = editableQuestion.value.rightAnswers = val.map(
+            answersToDrag.value = editableQuestion.value.answ = val.map(
                 (item) => item.item
             );
+            if (
+                val.map((item) => item.item).join("") ===
+                editableQuestion.value.rightAnswers.join("")
+            ) {
+                return (editableQuestion.value.right = true);
+            }
+            return (editableQuestion.value.right = false);
         }
     });
 </script>
