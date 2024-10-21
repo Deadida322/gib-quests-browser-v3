@@ -105,7 +105,7 @@
         }
 
         if (score == 10) emit("next-stage");
-        requestAnimationFrame(drawCanvas);
+        setTimeout(drawCanvas, 12);
     }
     onMounted(async () => {
         await nextTick();
