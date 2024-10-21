@@ -7,7 +7,7 @@ const mockQuest = {
             order: 1,
             title: "Пролог",
             type: "video",
-            url: "https://www.youtube.com/watch?v=es0uF-ent40"
+            url: "https://youtu.be/c9PFKF6GV60"
         },
         {
             order: 2,
@@ -96,6 +96,11 @@ const mockQuest = {
         },
         {
             order: 13,
+            title: "Snake Артём: Набери 5 баллов",
+            type: "snake"
+        },
+        {
+            order: 14,
             title: "Найди велик по карте",
             type: "map",
             point: {
@@ -104,19 +109,19 @@ const mockQuest = {
             }
         },
         {
-            order: 14,
+            order: 15,
             title: "Ехай на...",
             type: "text",
             text: "Теперь когда велосипед найден, тебе нужно вспомнить в каком порядке сканировались qr-коды - это и есть код от замка"
         },
         {
-            order: 15,
+            order: 16,
             title: "Я, надеюсь, ты справилась",
             type: "text",
             text: "Теперь прежде чем ехать куда-то, давай переведём дыханием и прервёмся на тест"
         },
         {
-            order: 16,
+            order: 17,
             title: "Тест обо всём",
             type: "test",
             questions: [
@@ -181,7 +186,7 @@ const mockQuest = {
                 {
                     title: "О какой peugeot я мечтаю?",
                     type: "single",
-                    answers: ["RCZ", "RZC", "РЦЗО", "АБВГД"],
+                    answers: ["RCZ", "RZC", "РЦЗО", "АБВГД", "СВО"],
                     answ: [],
                     rightAnswers: ["RCZ"],
                     order: 5
@@ -199,16 +204,29 @@ const mockQuest = {
                         "EmberJS"
                     ],
                     order: 6
+                },
+                {
+                    title: "Какой наиболее распространенный способ добычи нефти?",
+                    type: "single",
+                    answers: [
+                        "фонтанный",
+                        "штанговыми скважинными насосами",
+                        "газлифтный",
+                        "Ахуеть, че происходит"
+                    ],
+                    answ: [],
+                    rightAnswers: ["штанговыми скважинными насосами"],
+                    order: 7
                 }
             ]
         },
         {
-            order: 17,
+            order: 18,
             title: "Иди на запятую!",
             type: "map",
             point: {
-                latitude: 12,
-                longitude: 10
+                latitude: 55.660616,
+                longitude: 37.506687
             }
         }
     ]

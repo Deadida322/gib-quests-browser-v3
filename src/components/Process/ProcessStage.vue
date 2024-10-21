@@ -6,6 +6,7 @@
     import ProcessMap from "@/components/Process/ProcessMap.vue";
     import ProcessQrCode from "@/components/Process/ProcessQrCode.vue";
     import FlappyTyom from "@/components/Process/FlappyTyom.vue";
+    import SnakeTyom from "@/components/Process/SnakeTyom.vue";
     defineProps({
         stage: {
             type: Object,
@@ -70,6 +71,12 @@
                 :stage="stage"
                 @valid-change="emit('valid-change')"
                 @next-stage="emit('next-stage')"></flappy-tyom>
+            <snake-tyom
+                v-else-if="stage.type === 'snake'"
+                :key="stage.order"
+                :stage="stage"
+                @valid-change="emit('valid-change')"
+                @next-stage="emit('next-stage')"></snake-tyom>
         </v-card-text>
     </g-card>
 </template>

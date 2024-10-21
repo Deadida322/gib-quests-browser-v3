@@ -10,17 +10,30 @@
         }
     });
 
+    const message = ref("");
+
+    const snackbar = ref(false);
+
     const { stage } = toRefs(props);
     const editableStage = ref(stage.value);
     const disabled = ref(true);
     const emit = defineEmits(["next-stage"]);
 
     qr.callback = (err, value) => {
-        if (err) {
+        if (err || !value) {
             console.error(err);
+            snackbar.value = true;
+            return (message.value = "Не удалось отсканировать код");
         }
-        if (value.result === stage.value.code) disabled.value = false;
-        else disabled.value = true;
+        if (value.result === stage.value.code) {
+            disabled.value = false;
+            message.value = `Верный код - ${value.result}!`;
+        } else {
+            disabled.value = true;
+            message.value = `Некорректный код - ${value.result}`;
+        }
+
+        snackbar.value = true;
     };
 
     const readQrCode = (value) => {
@@ -30,6 +43,20 @@
 
 <template>
     <div>
+        <v-snackbar
+            v-model="snackbar"
+            :timeout="3000">
+            {{ message }}
+
+            <template #actions>
+                <v-btn
+                    color="blue"
+                    variant="text"
+                    @click="snackbar = false">
+                    ок
+                </v-btn>
+            </template>
+        </v-snackbar>
         <g-image-loader
             v-model="editableStage.image"
             @update:model-value="readQrCode"></g-image-loader>

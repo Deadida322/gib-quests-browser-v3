@@ -71,4 +71,8 @@
         left: 15vw;
         width: 70vw !important;
     }
+
+    .process-page {
+        margin-bottom: 20px;
+    }
 </style>
