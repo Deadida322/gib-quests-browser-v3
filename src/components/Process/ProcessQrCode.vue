@@ -1,7 +1,7 @@
 <script setup>
     import { ref, toRefs } from "vue";
-    import QrCode from "qrcode-reader";
-    var qr = new QrCode();
+    import { QrcodeStream } from "vue-qrcode-reader";
+
     const props = defineProps({
         stage: {
             type: Object,
@@ -15,29 +15,24 @@
     const snackbar = ref(false);
 
     const { stage } = toRefs(props);
-    const editableStage = ref(stage.value);
     const disabled = ref(true);
     const emit = defineEmits(["next-stage"]);
 
-    qr.callback = (err, value) => {
-        if (err || !value) {
-            console.error(err);
+    const onDetect = (codes) => {
+        if (!codes?.length) {
             snackbar.value = true;
             return (message.value = "Не удалось отсканировать код");
         }
-        if (value.result === stage.value.code) {
+        const { rawValue: value } = codes[0];
+        if (value === stage.value.code) {
             disabled.value = false;
-            message.value = `Верный код - ${value.result}!`;
+            message.value = `Верный код - ${value}!`;
         } else {
             disabled.value = true;
-            message.value = `Некорректный код - ${value.result}`;
+            message.value = `Некорректный код - ${value}`;
         }
 
         snackbar.value = true;
-    };
-
-    const readQrCode = (value) => {
-        qr.decode(value);
     };
 </script>
 
@@ -57,9 +52,9 @@
                 </v-btn>
             </template>
         </v-snackbar>
-        <g-image-loader
-            v-model="editableStage.image"
-            @update:model-value="readQrCode"></g-image-loader>
+        <qrcode-stream
+            class="qr-stream"
+            @detect="onDetect"></qrcode-stream>
         <div class="d-flex mt-4">
             <v-spacer></v-spacer>
             <v-btn
@@ -72,3 +67,10 @@
         </div>
     </div>
 </template>
+
+<style lang="scss" scoped>
+    .qr-stream {
+        width: 100%;
+        height: 600px;
+    }
+</style>
